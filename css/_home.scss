@@ -352,6 +352,9 @@ body{
                                     padding: 20px 20px 0 0;
                                     a{
                                     }
+                                    .cart-item-id{
+                                        display: none;
+                                    }
                                 }
                             }
                             .total-cart-price{
@@ -391,6 +394,22 @@ body{
                                      background-color: $yellow-font-color;
                                  }
                              }
+                            }
+                            .err-message{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                i{
+                                    margin-right: 10px;
+                                    color: rgb(214, 22, 22);
+                                }
+                                h3{
+                                    color: $main-color;
+                                    font-family: $second-font-family;
+                                    font-size: 15px;
+                                    white-space: nowrap;
+                                    margin: 0px;
+                                }
                             }
                         }
                         &:hover{
@@ -807,7 +826,7 @@ align-items: center;
         }
         .search-btn{
             padding-left: 15px;
-            border-radius: 5px;
+            background-color: #F2F3F4;;
             &:hover{
                 background-color: $main-color;
             }

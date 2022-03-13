@@ -4,6 +4,14 @@ $third-font-color: #253D4E;
 $button-back-color: #DEF9EC;
 $first-font-family : 'Lato', sans-serif;
 $second-font-family : 'Quicksand', sans-serif;
+#header{
+    .shop-page-top{
+        border-bottom: 1px solid #ececec;
+        .header-top{
+            border: 0;
+        }
+    }
+}
 #snack{
     .snack{
         background: url(../images/shop/header-bg.png) no-repeat center center;

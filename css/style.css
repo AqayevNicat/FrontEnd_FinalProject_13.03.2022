@@ -590,6 +590,10 @@ body {
   padding: 20px 20px 0 0;
 }
 
+#header .header-middle .right .account ul li .cart-shopping-basket li .shopping-cart-delete .cart-item-id {
+  display: none;
+}
+
 #header .header-middle .right .account ul li .cart-shopping-basket .total-cart-price {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -645,6 +649,31 @@ body {
 
 #header .header-middle .right .account ul li .cart-shopping-basket .btns button:hover {
   background-color: #FDC040;
+}
+
+#header .header-middle .right .account ul li .cart-shopping-basket .err-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#header .header-middle .right .account ul li .cart-shopping-basket .err-message i {
+  margin-right: 10px;
+  color: #d61616;
+}
+
+#header .header-middle .right .account ul li .cart-shopping-basket .err-message h3 {
+  color: #3BB77E;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  white-space: nowrap;
+  margin: 0px;
 }
 
 #header .header-middle .right .account ul li:hover .cart-shopping-basket {
@@ -1153,7 +1182,7 @@ body {
 
 .phone-side-menu .input .search-btn {
   padding-left: 15px;
-  border-radius: 5px;
+  background-color: #F2F3F4;
 }
 
 .phone-side-menu .input .search-btn:hover {
@@ -3551,6 +3580,14 @@ body {
   }
 }
 
+#header .shop-page-top {
+  border-bottom: 1px solid #ececec;
+}
+
+#header .shop-page-top .header-top {
+  border: 0;
+}
+
 #snack .snack {
   background: url(../images/shop/header-bg.png) no-repeat center center;
   border-radius: 20px;
@@ -5815,7 +5852,7 @@ body {
       align-content: center;
 }
 
-#cart .cart-left .update-btn button {
+#cart .cart-left .update-btn button, #cart .cart-left .update-btn .shop {
   display: inline-block;
   border: 1px solid transparent;
   font-size: 14px;
@@ -5829,11 +5866,11 @@ body {
   letter-spacing: 0.5px;
 }
 
-#cart .cart-left .update-btn button i {
+#cart .cart-left .update-btn button i, #cart .cart-left .update-btn .shop i {
   margin-right: 10px;
 }
 
-#cart .cart-left .update-btn button:hover {
+#cart .cart-left .update-btn button:hover, #cart .cart-left .update-btn .shop:hover {
   background-color: #FDC040;
 }
 
