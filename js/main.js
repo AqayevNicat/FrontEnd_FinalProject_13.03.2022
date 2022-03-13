@@ -138,8 +138,8 @@ $(window).on("load", function () {
   
 // Cart button
 var cartBasket = JSON.parse(localStorage.getItem("basket"))
+var myCartul = document.querySelector(".cart-shopping-basket");
 if(cartBasket.length > 0){
-  let myCartul = document.querySelector(".cart-shopping-basket");
   var totalPriceCount = 0;
   
   for(let item of cartBasket){
@@ -165,8 +165,10 @@ if(cartBasket.length > 0){
   divDel.setAttribute("class","shopping-cart-delete")
   divDel.innerHTML = 
   `
-  <a href="#"><i class="fa-solid fa-xmark"></i></a>
+  <a href="#" class="cart-cls-ic"><i class="fa-solid fa-xmark"></i></a>
+  <span class="cart-item-id">${item.id}</span>
   `;
+  
   totalPriceCount += Math.round(item.price*item.count);
   li.append(divImg,divTitle,divDel);
   myCartul.append(li);
@@ -187,6 +189,29 @@ if(cartBasket.length > 0){
   btndiv.append(viewBtn,checkBtn);
   myCartul.append(totalPric,btndiv)
   document.querySelector(".cart-item-count").innerText = cartBasket.length;
+}
+else{
+  let err = document.createElement("div");
+  err.setAttribute("class","err-message")
+  err.innerHTML = 
+  `
+  <i class="fa-solid fa-circle-minus"></i>
+  <h3>Sebet bosdur ... </h3>
+  `;
+  myCartul.append(err)
+}
+// Header cart button remove item
+var closeIcons = document.querySelectorAll(".cart-cls-ic");
+for(let icon of closeIcons){
+  icon.addEventListener("click",function(){
+      for(let i = 0;i<cartBasket.length;i++){
+          if(this.nextElementSibling.innerText == cartBasket[i].id){
+              cartBasket.splice(i,1);
+              localStorage.setItem("basket",JSON.stringify(cartBasket));
+              window.location.reload();
+          }
+      }
+  })
 }
 // Basket
 var addButtons = document.querySelectorAll(".add-prod-basket");
